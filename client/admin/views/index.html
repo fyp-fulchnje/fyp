@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="adminApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Final Year Project">
+    <meta name="author" content="Nick Fulcher">
+    <title>FYP</title>
+        <!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>   
+
+    <!-- Custom Angular -->
+    <script src="/admin/app.js"></script>
+    <script src="/admin/controllers/dataset-controller.js"></script>
+</head>
+<body>
+    <!-- Dataset Count and List-->
+    <div ng-controller="datasetController">
+        <h1>There are {{ datasets.length }} datasets available</h1>
+        <ul>
+            <li ng-repeat="dataset in datasets">
+            {{dataset.name}}
+            </li>
+        </ul>
+
+        <form ng-submit="createDataset()">
+            <input type="text" placeholder="Enter new dataset name" ng-model="datasetName">
+            <button type="submit">Add</button> 
+        </form>
+    </div>
+  
+
+
+</body>
+
+</html>
